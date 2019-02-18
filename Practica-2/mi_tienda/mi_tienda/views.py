@@ -9,7 +9,7 @@ def mi_producto(request, param):
 	numero = int(param)
 	html = "Acceso a producto: %i" % numero;
 	return HttpResponse(html)
-    
+
 
 PLANTILLA = """
 <!DOCTYPE html>
@@ -32,5 +32,13 @@ def saludo(request):
     c = Context({'user':'Epic Saxo guy'})
 
     # -- Obtener la pagina html final
+    html = t.render(c)
+    return HttpResponse(html)
+
+def venta(request):
+    fp = open('/home/alumnos/ivega/2018-19-LTAW-practicas/Practica-2/mi_tienda/mi_tienda/producto.html')
+    t = Template(fp.read())
+    fp.close()
+    c = Context({'producto':'LANGOSTAS'})
     html = t.render(c)
     return HttpResponse(html)

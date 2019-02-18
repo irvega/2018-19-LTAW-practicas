@@ -17,10 +17,12 @@ from django.contrib import admin
 from mi_tienda.views import mi_funcion
 from mi_tienda.views import mi_producto
 from mi_tienda.views import saludo
+from mi_tienda.views import venta
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hola/', mi_funcion),
-    url(r'^producto/(\d{1,2})/$',mi_producto),
+    url(r'^producto/(\d{1,2})/$', mi_producto),
     url(r'^saludo/', saludo),
+    url(r'^venta/', venta),
 ]
