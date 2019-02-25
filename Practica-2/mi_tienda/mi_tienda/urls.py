@@ -14,15 +14,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from mi_tienda.views import mi_funcion
-from mi_tienda.views import mi_producto
-from mi_tienda.views import saludo
-from mi_tienda.views import venta
+import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^hola/', mi_funcion),
-    url(r'^producto/(\d{1,2})/$', mi_producto),
-    url(r'^saludo/', saludo),
-    url(r'^venta/', venta),
+    url(r'^producto/(\d{1,2})/$', views.mi_producto),
+    url(r'^$', views.index),
 ]

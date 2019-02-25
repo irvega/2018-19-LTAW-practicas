@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mi tienda</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <p id="title"> MI TIENDA<p>
+    <p id="name">Bienvenido {{user}}</p>
+    <img class= "carrito" id="cesta" src="carrito.png"
+        width="40px" height="34px">
+  </body>
+</html>
