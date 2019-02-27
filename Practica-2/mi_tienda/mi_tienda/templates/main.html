@@ -4,14 +4,21 @@
   <head>
     <meta charset="utf-8">
     <title>Mi tienda</title>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main.css' %}">
   </head>
   <body>
     {% load static %}
-    <p id="title"> MI TIENDA<p>
+    <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
     <p id="name">Bienvenido {{user}}</p>
+    <p id="name"> Selecione producto:  </p>
     <img class= "carrito" id="cesta" src="{% static "carrito.png" %}" alt="Carro"
         width="50px" height="44px">
+    <div style="text-align:center">
+      <button class ="button" type="button" onclick="window.location.href='/prod1.html'">Click Me: Camisetas !</button>
+      <button class ="button" type="button" onclick="window.location.href='/prod2.html'">Click Me: Calcetines !</button>
+    </div>
+    <iframe width="740" height="416" src="https://www.youtube.com/embed/EYEHUOpwNvE?autoplay=1&loop=1" allow=" autoplay;" allowfullscreen></iframe>
   </body>
 </html>
