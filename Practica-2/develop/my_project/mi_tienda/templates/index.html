@@ -15,15 +15,20 @@
     <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
     <div  style="text-align:center">
       <p id="name">Bienvenido {{user}}</p>
-      <button type="button" ><img class= "carrito" id="cesta" src="{% static "carrito.png" %}" alt="Carro"
+      <button type="button" onclick="window.location.href='/carrito'" ><img class= "carrito" id="cesta" src="{% static "carrito.png" %}" alt="Carro"
           width="50px" height="44px"></button>
     </div>
-    <p id="name"> Selecione producto:  </p>
+
+    <form method = "POST" action = "http://mysevidor/php/buscador.php3">
+    <i class="fa fa-search"></i>
+    <input type="text" name="buscar" size="20"><br><br>
+    <input type="submit" value="Buscar">
+
     <img src="/static/logo.jpg" alt="NOPE" id="logo">
     <div style="text-align:center">
       <button class="button" type="button">Click me</button>
-      <button class ="button" type="button" onclick="window.location.href='/prod1.html'">Click Me: Camisetas !</button>
-      <button class ="button" type="button" onclick="window.location.href='/prod2.html'">Click Me: Calcetines !</button>
+      <button class ="button" type="button" onclick="window.location.href='/camisetas'">Click Me: Camisetas !</button>
+      <button class ="button" type="button" onclick="window.location.href='/calcetines'">Click Me: Calcetines !</button>
     </div>
   </body>
 </html>
