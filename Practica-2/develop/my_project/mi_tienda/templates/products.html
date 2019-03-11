@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TIENDALANDIA</title>
+      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'products.css' %}">
+  </head>
+  <body>
+    {% load static %}
+    <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
+    <p id = "name">¿Qué te gusta?</p>
+    {% for product in products %}
+    <div class = 'products'>
+      <img src = '{{ product.img }}' alt = "NOP" id ="image">
+      <br>
+      <span> {{product.name}}</span>
+      <span> {{product.price}}</span>
+      <span> €</span>
+    </div>
+    {% endfor%}
+  </body>
+</html>

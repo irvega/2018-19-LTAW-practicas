@@ -21,7 +21,10 @@ body {
       font-weight: bolder;
       font-size: 260%
 }
-
+#logo{display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
 .button{border-radius: 7px;
         padding: 10px;
         font-size: 17px;

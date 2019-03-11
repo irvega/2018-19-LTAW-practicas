@@ -14,21 +14,19 @@
     {% load static %}
     <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
     <div  style="text-align:center">
-      <p id="name">Bienvenido {{user}}</p>
-      <button type="button" onclick="window.location.href='/carrito'" ><img class= "carrito" id="cesta" src="{% static "carrito.png" %}" alt="Carro"
-          width="50px" height="44px"></button>
+      <p id="name">Bienvenid@ {{user}}</p>
+
+      <form method = "POST" action = "/home/alumnos/ivega/2018-19-LTAW-practicas/Practica-2/develop/my_project/db.sqlite3">
+      <i class="fa fa-search"></i>
+      <input type="text" name="buscar" size="20">
+      <input type="submit" value="Buscar"><br></br>
     </div>
 
-    <form method = "POST" action = "http://mysevidor/php/buscador.php3">
-    <i class="fa fa-search"></i>
-    <input type="text" name="buscar" size="20"><br><br>
-    <input type="submit" value="Buscar">
-
-    <img src="/static/logo.jpg" alt="NOPE" id="logo">
     <div style="text-align:center">
-      <button class="button" type="button">Click me</button>
       <button class ="button" type="button" onclick="window.location.href='/camisetas'">Click Me: Camisetas !</button>
-      <button class ="button" type="button" onclick="window.location.href='/calcetines'">Click Me: Calcetines !</button>
+      <button class ="button" type="button" onclick="window.location.href='/calcetines'">Click Me: Calcetines !</button><br></br>
     </div>
+    <img aling="middle" src="/static/spacejam.jpg" alt="NOP" id="logo">
+
   </body>
 </html>

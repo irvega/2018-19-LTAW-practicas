@@ -13,19 +13,11 @@ def home_view (request):
 
 def prod1 (request):
     objects = Calcetine.objects.all()
-    html = "<p>Listado de calcetines: </p>"
-    for elt in objects:
-        print(elt.name)
-        html += '<p>'+ elt.name + ' ' + str(elt.price) + '<p>'
-    return HttpResponse(html)
+    return render(request, "products.html", {'products' : objects})
 
 def prod2 (request):
     objects = Camiseta.objects.all()
-    html = "<p>Listado de camisetas: </p>"
-    for elt in objects:
-        print(elt.name)
-        html += '<p>'+ elt.name + ' ' + str(elt.price) + '€' + '<p>'
-    return HttpResponse(html)
+    return render(request, "products.html", {'products' : objects})
 
 def carrito (request):
     return render(request, "carrito.html", {})
