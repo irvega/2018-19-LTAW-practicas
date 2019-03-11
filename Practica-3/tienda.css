@@ -1,0 +1,34 @@
+@font-face{
+    font-family: Letter;
+    src: url("letter.ttf");
+}
+
+body {
+  background-color:  #936f80 ;
+}
+
+#name{color: #d4d126;
+     font-family: Letter;
+     text-align: center;
+     font-size: 200%;
+     padding-bottom: 1px
+}
+
+#title{color: #8B08B;
+      text-align: center;
+      text-decoration: underline;
+      font-family: Letter;
+      font-weight: bolder;
+      font-size: 260%
+}
+
+.button{border-radius: 7px;
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        background: #f1f1f1
+}
+
+iframe{margin-top: 17px;
+       margin-left: 20%
+}
