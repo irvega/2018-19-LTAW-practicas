@@ -31,7 +31,7 @@ http.createServer((req, res) => {
 
       //-- Hay definida una Cookie.
       } else {
-        content += "Obijuan"
+        content += "Irene"
       }
 
       res.statusCode = 200;
@@ -42,7 +42,7 @@ http.createServer((req, res) => {
       content = "Registrado! Cookie enviada al navegador!"
 
       //-- ESTABLECER LA COOKIE!!
-      res.setHeader('Set-Cookie', 'user=obijuan')
+      res.setHeader('Set-Cookie', 'user=Irene')
       break
 
     //-- Se intenta acceder a un recurso que no existe

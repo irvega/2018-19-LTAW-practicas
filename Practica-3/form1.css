@@ -1,0 +1,20 @@
+@font-face{
+    font-family: Letter;
+    src: url("letter.ttf");
+}
+
+body {
+  background-color:  #936f80 ;
+}
+
+#name{color: #d4d126;
+     font-family: Letter;
+     text-align: center;
+     font-size: 200%;
+     padding-bottom: 1px
+}
+
+h1{color: #8B08B;
+  font-family: Letter;
+  font-size: 160%
+}

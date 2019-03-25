@@ -1,8 +1,9 @@
 var http = require('http');
 var url = require('url');
+var fs = require('fs');
 
 const PORT = 8080
-
+// Con localhost en vez de 127.0.0.1
 console.log("Arrancando servidor en puerto " + PORT)
 
 //-- Configurar y lanzar el servidor. Por cada peticion recibida
@@ -18,26 +19,34 @@ http.createServer((req, res) => {
 
     //-- Pagina principal
     case "/":
-      content = `
-      <!DOCTYPE html>
-      <html lang="en" dir="ltr">
-        <head>
-          <meta charset="utf-8">
-          <title>JSON Test</title>
-        </head>
-        <body>
-          <p>Prueba de acceso a fichero JSON</p>
-          <p>Accede al recurso <a href="myquery">/myquery</a> para
-          recibir un objeto JSON con información</p>
-        </body>
-      </html>`
+      fs.readFile("./tienda.html", function(err, data) {
+        //-- Generar el mensaje de respuesta
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        res.end();
+        return
+      });
+      break;
 
-      res.statusCode = 200;
+    //-- Fichero js cliente
+    case "/client-2.js":
+      fs.readFile("./client-2.js", function(err, data) {
+        //-- Generar el mensaje de respuesta
+        res.writeHead(200, {'Content-Type': 'application/javascript'});
+        res.write(data);
+        res.end();
+        return
+      });
       break;
 
     //-- Acceso al recurso JSON
     case "/myquery":
+    //-- Leer los parámetros recibidos en la peticion
+          var params = q.query;
 
+          //-- No hacemos nada con ellos, simplemente los mostramos en
+          //-- la consola
+          console.log("Parametros: " +params.param1 + ' y ' + params.param2);
       //-- Contenido en formato JSON
       //-- Es lo que se va a devolver en la petición
       content = `
@@ -53,16 +62,42 @@ http.createServer((req, res) => {
       res.end();
       return
       break
+    case "/prod1.html":
+      fs.readFile("./prod1.html", function(err, data) {
+        //-- Generar el mensaje de respuesta
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        res.end();
+        return
+      });
+      break;
+      case "/prod2.html":
+        fs.readFile("./prod2.html", function(err, data) {
+          //-- Generar el mensaje de respuesta
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(data);
+          res.end();
+          return
+        });
+        break;
+      case "/form1.html":
+        fs.readFile("./form1.html", function(err, data) {
+          //-- Generar el mensaje de respuesta
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(data);
+          res.end();
+          return
+        });
+        break;
 
     //-- Se intenta acceder a un recurso que no existe
     default:
       content = "Error";
       res.statusCode = 404;
+      //-- Generar el mensaje de respuesta
+      res.setHeader('Content-Type', 'text/html')
+      res.write(content);
+      res.end();
   }
-
-  //-- Generar el mensaje de respuesta
-  res.setHeader('Content-Type', 'text/html')
-  res.write(content);
-  res.end();
 
 }).listen(PORT);
