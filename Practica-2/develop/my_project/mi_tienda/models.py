@@ -18,3 +18,11 @@ class Calcetine (models.Model):
     price = models.FloatField()
     def __str__(self):
         return self.name
+
+class Zapatilla (models.Model):
+    name = models.CharField(max_length=200)
+    img = models.CharField(max_length=400)
+    stock = models.IntegerField()
+    price = models.FloatField()
+    def __str__(self):
+        return self.name

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from mi_tienda.models import Camiseta, Calcetine
+from mi_tienda.models import Camiseta, Calcetine, Zapatilla
 from . import models
 
 # Create your views here.
@@ -17,6 +17,10 @@ def prod1 (request):
 
 def prod2 (request):
     objects = Camiseta.objects.all()
+    return render(request, "products.html", {'products' : objects})
+
+def prod3 (request):
+    objects = Zapatilla.objects.all()
     return render(request, "products.html", {'products' : objects})
 
 def carrito (request):
