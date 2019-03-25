@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "description": "Proyecto hola mundo",
+  "keywords": [
+    "ltaw",
+    "test"
+  ],
+  "version": "0.0.1",
+  "author": "Irene",
+  "main": "hello.js",
+  "devDependencies": {},
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myTeachingURJC/2018-19-LTAW.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTeachingURJC/2018-19-LTAW/issues"
+  },
+  "homepage": "https://github.com/myTeachingURJC/2018-19-LTAW#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
