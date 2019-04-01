@@ -49,6 +49,7 @@ http.createServer(function (req, res) {
       if (tipo == "json") {
         mime = "text/json"
       }
+
       //-- Generar el mensaje de respuesta
       res.writeHead(200, {'Content-Type': mime});
       res.write(data);

@@ -51,7 +51,7 @@ http.createServer((req, res) => {
       //-- Es lo que se va a devolver en la petición
       content = `
       {
-        "productos": ["FPGA", "RISC-V", "74ls00"]
+        "productos": ["CAMI", "RISC-V", "74ls00"]
       }
       `
       //-- Generar el mensaje de respuesta
@@ -62,6 +62,7 @@ http.createServer((req, res) => {
       res.end();
       return
       break
+
     case "/prod1.html":
       fs.readFile("./prod1.html", function(err, data) {
         //-- Generar el mensaje de respuesta
@@ -71,6 +72,7 @@ http.createServer((req, res) => {
         return
       });
       break;
+
       case "/prod2.html":
         fs.readFile("./prod2.html", function(err, data) {
           //-- Generar el mensaje de respuesta
@@ -80,8 +82,19 @@ http.createServer((req, res) => {
           return
         });
         break;
+
       case "/form1.html":
         fs.readFile("./form1.html", function(err, data) {
+          //-- Generar el mensaje de respuesta
+          res.writeHead(200, {'Content-Type': 'text/html'});
+          res.write(data);
+          res.end();
+          return
+        });
+        break;
+
+      case "/ingreso.html":
+        fs.readFile("./ingreso.html", function(err, data) {
           //-- Generar el mensaje de respuesta
           res.writeHead(200, {'Content-Type': 'text/html'});
           res.write(data);

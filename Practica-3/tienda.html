@@ -12,8 +12,17 @@
 <body onload="main();">
   <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
   <p id="name">Bienvenido user....</p>
-  <button type="button" onclick="window.location.href='/form1.html'" ><img class= "carrito" id="cesta" src="carrito.png" alt="Carro"
-        width="50px" height="44px"></button>
+  <div>
+    <button class ="button" type="button" onclick="window.location.href='/ingreso.html'">Ingresar</button>
+    <button type="button" onclick="window.location.href='/form1.html'" ><img class= "carrito" id="cesta" src="carrito.png" alt="Carro"
+          width="50px" height="44px"></button>
+  </div>
+  <form>
+    <div>
+      <input type="search" id="miBusqueda" name="q" placeholder="producto">
+      <button>Buscar</button>
+    </div>
+  </form>
   <p id="name"> Selecione producto:  </p>
   <div style="text-align:center">
     <button class ="button" type="button" onclick="window.location.href='/prod1.html'">Click Me: Camisetas !</button>
