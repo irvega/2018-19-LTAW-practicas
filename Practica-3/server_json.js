@@ -39,30 +39,6 @@ http.createServer((req, res) => {
       });
       break;
 
-    //-- Acceso al recurso JSON
-    case "/myquery":
-    //-- Leer los parámetros recibidos en la peticion
-          var params = q.query;
-
-          //-- No hacemos nada con ellos, simplemente los mostramos en
-          //-- la consola
-          console.log("Parametros: " +params.param1 + ' y ' + params.param2);
-      //-- Contenido en formato JSON
-      //-- Es lo que se va a devolver en la petición
-      content = `
-      {
-        "productos": ["CAMI", "RISC-V", "74ls00"]
-      }
-      `
-      //-- Generar el mensaje de respuesta
-      //-- IMPORTANTE! Hay que indicar que se trata de un objeto JSON
-      //-- en la cabecera Content-Type
-      res.setHeader('Content-Type', 'application/json')
-      res.write(content);
-      res.end();
-      return
-      break
-
     case "/prod1.html":
       fs.readFile("./prod1.html", function(err, data) {
         //-- Generar el mensaje de respuesta

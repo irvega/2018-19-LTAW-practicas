@@ -16,7 +16,7 @@ function main()
     m = new XMLHttpRequest();
 
     //-- Configurar la petición
-        m.open("GET","http://localhost:8080/myquery?param1=hola&param2=wei", true);
+        m.open("GET","datos.json", true);
 
     //-- Cuando la haya alguna noticia sobre la peticion
     //-- ejecuta este código
@@ -35,7 +35,7 @@ function main()
          for (i=0; i < o.productos.length; i++) {
 
            //-- Añadir cada producto al párrafo de visualización
-           resultado.innerHTML += o.productos[i];
+           resultado.innerHTML += o.productos.name[i];
 
            //-- Separamos los productos por ',''
            if (i<o.productos.length-1) {
