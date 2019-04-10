@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="tienda.css">
     <link rel="icon" type="image/png" href="icon1.png">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="client-2.js"></script>
 </head>
 
@@ -19,16 +21,21 @@
   </div>
   <form>
     <div>
-      <input type="search" id="miBusqueda" name="q" placeholder="producto">
-      <button>Buscar</button>
+      <!-- <input type="search" id="miBusqueda" name="q" placeholder="Search...">
+      <button>Buscar</button> -->
+        <input onclick="myFunction()" type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()">
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+        </div>
       <input type="button" id="ver" value="Ver productos"/>
       <p id="resultado"></p>
     </div>
   </form>
   <p id="name"> Selecione producto:  </p>
   <div style="text-align:center">
-    <button class ="button" type="button" onclick="window.location.href='/prod1.html'">Click Me: Camisetas !</button>
-    <button class ="button" type="button" onclick="window.location.href='/prod2.html'">Click Me: Calcetines !</button>
+    <button class ="button" type="button" onclick="window.location.href='/prod1.html'" data-toggle="tooltip" title="Click me!">Camisetas !</button>
+    <button class ="button" type="button" onclick="window.location.href='/prod2.html'" data-toggle="tooltip" title="Click me!">Calcetines !</button>
   </div>
   <iframe width="740" height="416" src="https://www.youtube.com/embed/EYEHUOpwNvE?autoplay=1&loop=1" allow=" autoplay;" allowfullscreen></iframe></br>
 </body>
