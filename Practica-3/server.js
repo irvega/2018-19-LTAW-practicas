@@ -10,7 +10,6 @@ http.createServer(function (req, res) {
     console.log("Recurso soliditado (URL): " + req.url);
 
     var q = url.parse(req.url, true);
-    console.log("URL parseada: ")
     console.log("Host: " + q.host)
     console.log("pathname:" + q.pathname)
 
@@ -28,6 +27,37 @@ http.createServer(function (req, res) {
     filename = "." + filename
     console.log("Filename: " + filename)
     console.log("Tipo: " + tipo)
+
+
+    content = "Bienvenido a mi tienda "
+    num = ""
+    if (req.method === 'POST') {
+      req.on('data', chunk => {
+          //-- Leer los datos (convertir el buffer a cadena)
+          data = chunk.toString();
+          //-- Añadir los datos a la respuesta
+          content += data;
+          num = Math.floor(Math.random());
+          content += "Id" + num.toString();
+          //-- Fin del mensaje. Enlace al formulario
+          // content += `
+          //     </p>
+          //     <a href="/">[Formulario]</a>
+          //   </body>
+          // </html>
+          // `
+          //-- Mostrar los datos en la consola del servidor
+          console.log("Datos recibidos: " + data)
+       });
+
+       req.on('end', ()=> {
+         //-- Generar el mensaje de respuesta
+         res.setHeader('Content-Type', 'text/html')
+         res.write(content);
+         res.end();
+       })
+    }
+
 
     fs.readFile(filename, function(err, data) {
       if (err) {
@@ -49,10 +79,17 @@ http.createServer(function (req, res) {
       if (tipo == "json") {
         mime = "text/json"
       }
+    
       //-- Generar el mensaje de respuesta
       res.writeHead(200, {'Content-Type': mime});
       res.write(data);
       res.end();
     });
+      //-- Se intenta acceder a un recurso que no existe
+      // default:
+      // content = "Error";
+      // res.statusCode = 404;
+      // });
 
+    
 }).listen(8080);

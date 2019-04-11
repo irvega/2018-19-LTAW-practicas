@@ -31,27 +31,8 @@ function main()
         
          //-- Borrar el resultado anterior que hubiese en el párrafo
          //-- de resultado
-         resultado.innerHTML = "";
+        //  resultado.innerHTML = "";
 
-         function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-        
-        function filterFunction() {
-          var input, filter, ul, li, a, i;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          div = document.getElementById("myDropdown");
-          // a = div.getElementsByTagName("a");
-          for (i = 0; i < o.length; i++) {
-            txtValue = o[i].textContent || o[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              o[i].style.display = "";
-            } else {
-              o[i].style.display = "none";
-            }
-          }
-        }
         //  //--Recorrer los productos del objeto JSON
         //  for (i=0; i < o.Camisetas.length; i++) {
 
@@ -69,5 +50,36 @@ function main()
     //  //-- Enviar la petición!
          m.send();
   }
+  // $(document).ready(function(){ 
+  //   $('#alternar-respuesta-ej2').on('click',function(){
+  //      $('#respuesta-ej2').toggle('slow');
+  //   });
+  // });
+
+  // $('.dropdown-container')
+	// .on('click', '#myimput', function() {
+  //       $(this).siblings('#myDropdown').toggle();
+  //     });
+  //   };
+
+  // function myFunction() {
+  //   document.getElementById("myDropdown").classList.toggle("show");
+  // }
+  
+  // function filterFunction() {
+  //   var input, filter, ul, li, a, i;
+  //   input = document.getElementById("myInput");
+  //   filter = input.value.toUpperCase();
+  //   div = document.getElementById("myDropdown");
+  //   // a = div.getElementsByTagName("a");
+  //   for (i = 0; i < o.length; i++) {
+  //     txtValue = o[i].textContent || o[i].innerText;
+  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //       o[i].style.display = "";
+  //     } else {
+  //       o[i].style.display = "none";
+  //     }
+  //   }
+  // }
 
 }
