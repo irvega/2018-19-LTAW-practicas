@@ -2,8 +2,6 @@ var http = require('http');
 var url = require('url');
 
 const PORT = 8080
-console.log('hghg');
-
 console.log("Arrancando servidor en puerto " + PORT)
 
 //-- Configurar y lanzar el servidor. Por cada peticion recibida

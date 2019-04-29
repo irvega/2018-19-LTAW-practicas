@@ -4,13 +4,14 @@ function main()
   console.log("Client!")
 
   //-- Obtener el botón de VER del DOM
-  var ver = document.getElementById('ver')
+  // var ver = document.getElementById('ver')
+  var ver = document.getElementById('myInput')
 
   //-- Obtener el párrafo del DOM donde mostrar el resultado
   var resultado = document.getElementById('resultado');
 
   //-- Cuando el usuario aprieta el botón de ver los productos
-  ver.onclick = () => {
+  myInput.onclick = () => {
 
     //-- Crear objeto para hacer peticiones AJAX
     m = new XMLHttpRequest();
@@ -25,47 +26,32 @@ function main()
       if (m.readyState == 4 && m.status == 200) {
 
         //-- La respuesta es un objeto JSON
-        var o = JSON.parse(m.responseText)
-        console.log(o);
+        var prod = JSON.parse(m.responseText)
+        console.log(prod);
 
-        
-         //-- Borrar el resultado anterior que hubiese en el párrafo
-         //-- de resultado
-        //  resultado.innerHTML = "";
 
-        //  //--Recorrer los productos del objeto JSON
-        //  for (i=0; i < o.Camisetas.length; i++) {
+         // Borrar el resultado anterior que hubiese en el párrafo
+         // de resultado
+         resultado.innerHTML = "";
 
-        //    //-- Añadir cada producto al párrafo de visualización
-        //    resultado.innerHTML += o.Camisetas.name[i];
+         //--Recorrer los productos del objeto JSON
+         for (i=0; i < prod.Camisetas.length; i++) {
 
-        //    //-- Separamos los productos por ',''
-        //    if (i<o.Camisetas.length-1) {
-        //      resultado.innerHTML += ', ';
-        //    }
-        //  }
-          }
-       }
+           //-- Añadir cada producto al párrafo de visualización
+           resultado.innerHTML += prod.Camisetas.name[i];
+
+           //-- Separamos los productos por ',''
+           if (i<prod.Camisetas.length-1) {
+             resultado.innerHTML += ', ';
+           }
+         }
+      }
+    }
 
     //  //-- Enviar la petición!
          m.send();
   }
-  // $(document).ready(function(){ 
-  //   $('#alternar-respuesta-ej2').on('click',function(){
-  //      $('#respuesta-ej2').toggle('slow');
-  //   });
-  // });
 
-  // $('.dropdown-container')
-	// .on('click', '#myimput', function() {
-  //       $(this).siblings('#myDropdown').toggle();
-  //     });
-  //   };
-
-  // function myFunction() {
-  //   document.getElementById("myDropdown").classList.toggle("show");
-  // }
-  
   // function filterFunction() {
   //   var input, filter, ul, li, a, i;
   //   input = document.getElementById("myInput");

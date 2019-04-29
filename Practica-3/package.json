@@ -1,12 +1,12 @@
 {
   "name": "server",
-  "description": "Proyecto hola mundo",
+  "description": "Proyecto",
   "keywords": [
     "ltaw",
     "test"
   ],
   "version": "0.0.1",
-  "author": "Juan Gonzalez-Gómez (Obijuan)",
+  "author": "Irene",
   "main": "server.js",
   "devDependencies": {},
   "license": "GPL-3.0",
