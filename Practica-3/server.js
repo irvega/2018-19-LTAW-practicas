@@ -30,15 +30,15 @@ http.createServer(function (req, res) {
 
 
     content = "Bienvenido a mi tienda "
-    num = ""
+    // num = ""
     if (req.method === 'POST') {
       req.on('data', chunk => {
           //-- Leer los datos (convertir el buffer a cadena)
           data = chunk.toString();
           //-- Añadir los datos a la respuesta
           content += data;
-          num = Math.floor(Math.random());
-          content += "Id" + num.toString();
+          // num = Math.floor(Math.random());
+          // content += "Id" + num.toString();
           //-- Fin del mensaje. Enlace al formulario
           // content += `
           //     </p>
@@ -68,9 +68,21 @@ http.createServer(function (req, res) {
       //-- Tipo mime por defecto: html
       var mime = "text/html"
 
-      if (['png', 'jpg'].includes(tipo)) {
-        console.log("IMAGEN!")
-        mime = "image/" + tipo
+      // if (['png', 'jpg', 'jpeg'].includes(tipo)) {
+      //   console.log("IMAGEN!")
+      //   mime = "image/" + tipo
+      // }
+
+      if (tipo == "png") {
+        mime = "image/png"
+      }
+
+      if (tipo == "jpg") {
+        mime = "image/jpeg"
+      }
+
+      if (tipo == "jpeg") {
+        mime = "image/jpeg"
       }
 
       if (tipo == "css") {

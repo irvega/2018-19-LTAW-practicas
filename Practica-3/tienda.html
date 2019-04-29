@@ -6,12 +6,10 @@
     <link rel="stylesheet" href="tienda.css">
     <link rel="icon" type="image/png" href="icon1.png">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
     <script src="client-2.js"></script>
 </head>
 
-<body onload="main();">
+<body onload="buscar()">
   <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
   <p id="name">Bienvenido user....</p>
   <div>
@@ -19,14 +17,16 @@
     <button type="button" onclick="window.location.href='/form1.html'" ><img class= "carrito" id="cesta" src="carrito.png" alt="Carro"
           width="50px" height="44px"></button>
   </div>
-  <form>
+  <input type="text" list="busc" ><button>Search</button>
+  <datalist id="busc"></datalist>
+  <!-- <form>
     <div class="dropdown-container">
-      <!-- <input type="search" id="miBusqueda" name="q" placeholder="Search..."> -->
-        <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"><button>Search</button>
+      <input type="search" id="miBusqueda" name="q" placeholder="Search...">
+        <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"><button>Search</button>  
         <div id="myDropdown" class="dropdown-content"></div>
       <p id="resultado"></p>
     </div>
-  </form>
+  </form> -->
   <p id="name"> Selecione producto:  </p>
   <div style="text-align:center">
     <button class ="button" type="button" onclick="window.location.href='/prod1.html'" data-toggle="tooltip" title="Click me!">Camisetas !</button>
