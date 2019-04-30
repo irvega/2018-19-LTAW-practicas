@@ -1,0 +1,78 @@
+{
+  "Camisetas": [
+    {
+      "name": "Warrios",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/new-era-nba-league-net-golden-state-warriors-logo-tee-1.JPG",
+      "stock": "5",
+      "price": "25,00"
+    },
+    {
+      "name": "Celtics",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/new-era-nba-team-champion-boston-celtics-tee-1.jpg",
+      "stock": "9",
+      "price": "25,00"
+    },
+    {
+      "name": "Jordan",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/jordan-infants-brand-tee-5-white-1.jpg",
+      "stock": "14",
+      "price": "16,00"
+    },
+    {
+      "name": "NBA",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/new-era-nba-league-logo-tee-1.jpg",
+      "stock": "5",
+      "price": "19.9"
+    },
+    {
+      "name": "Carroll",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/camiseta-nino-replica-jaycee-carroll-20-r-madrid-2018-19-1-equipacion-1.jpg",
+      "stock": "3",
+      "price": "50.00"
+    },
+    {
+      "name": "Evolution",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/k1x-evolution-of-a-baller-tee-1100-1.jpg",
+      "stock": "17",
+      "price": "37,00"
+    }
+  ],
+    "Calcetines": [
+    {
+      "name": "Shaq",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/stance-tunes-jersey-socks-wht-1.jpg",
+      "stock": "13",
+      "price": "18.00"
+    },
+    {
+      "name": "Giannis",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/stance-giannis-splatter-mul-1.jpg",
+      "stock": "24",
+      "price": "19.9"
+    },
+    {
+      "name": "Curry",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/stance-curry-big-head-socks-12.jpg",
+      "stock": "15",
+      "price": "16.9"
+    },
+    {
+      "name": "Jordan",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/jordan-kids-diamond-high-crew-socks-2-pair-white-black-1.jpg",
+      "stock": "13",
+      "price": "16.50"
+    },
+    {
+      "name": "Przingis",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/stance-nba-future-legends-tf-porzingis-socks-1.jpg",
+      "stock": "5",
+      "price": "13.9"
+    },
+    {
+      "name": "Sixers",
+      "image": "https://www.manelsanchez.com/uploads/media/images/396x396/sixers-01-hwc-socks-1.jpg",
+      "stock": "13",
+      "price": "18.00"
+    }
+  ]
+}

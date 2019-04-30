@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs')
 const path = require('path')
+const mijson = require('./datos.json')
 
 http.createServer((req,res) => {
      console.log('req was: ' + req.url);
@@ -10,7 +11,6 @@ http.createServer((req,res) => {
         var stream = fs.createReadStream('tienda.html', 'utf8');
         stream.pipe(res);
     }
-
     if (req.url.split(".")[1] == 'html') {
         console.log('html');
         res.writeHead(200, { "Content-Type": "text/html" });
@@ -83,6 +83,21 @@ http.createServer((req,res) => {
         var stream = fs.createReadStream(ico_path);
         stream.pipe(res);
     }
-     
+    
+    if (req.url == '/search') {
+        console.log('He recibido una peticion formularios');
+        let data2 = '';
+        req.on('data',chunk => {
+            data = chunk.toString();
+            data2 += data;
+        });
+        req.on('end', () => {
+            res.setHeader('Content-Type', 'application/json');
+            res.write(JSON.stringify(mijson));
+            res.end();
+        });
+        console.log(data2);
+        // JSON.stringify(mijson)
+    }
 }
 ).listen(8000)
