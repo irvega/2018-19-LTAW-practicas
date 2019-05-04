@@ -8,24 +8,25 @@ function PeticionAJAX() {
   console.log(prod);
 
 }
-
+// Recojo lista de productos del json
 function lista(){
   let prod = PeticionAJAX();
   let list = [];
-  for (p in prod) { 
+  for (p in prod) {
     prod[p].forEach(element => {
       list.push(element.name);
-    }); 
+    });
   }
   return list;
   console.log(list);
 }
+// Abro desplegable buscador con contenido
 function buscar(){
   let list = lista();
   list.forEach(element => {
-    let option = document.createElement("option"); 
+    let option = document.createElement("option");
     option.value = element;
-    document.getElementById("busc").appendChild(option); 
+    document.getElementById("busc").appendChild(option);
   });
 }
 

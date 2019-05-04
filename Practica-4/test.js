@@ -83,7 +83,7 @@ io.on('connection', function(socket){
        //Emitir mensaje todos clientes conectados
        io.emit('new_message', msg);
      }
-     //-- Notificarlo en la consola del servidor
+     //Consola del servidor
      console.log("Mensaje recibido: " + msg)
    })
 });

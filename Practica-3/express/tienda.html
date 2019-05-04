@@ -17,19 +17,13 @@
     <button type="button" onclick="window.location.href='/form1.html'" ><img class= "carrito" id="cesta" src="static/carrito.png" alt="Carro"
           width="50px" height="44px"></button>
   </div>
+  <!-- Buscador -->
   <form action="/search" method="POST">
     <input type="text" list="busc" type="text" name='search'>
     <input type="submit" name="submit" value="buscar">
     <datalist id="busc"></datalist>
   </form>
-  <!-- <form>
-    <div class="dropdown-container">
-      <input type="search" id="miBusqueda" name="q" placeholder="Search...">
-        <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"><button>Search</button>  
-        <div id="myDropdown" class="dropdown-content"></div>
-      <p id="resultado"></p>
-    </div>
-  </form> -->
+
   <p id="name"> Selecione producto:  </p>
   <div style="text-align:center">
     <button class ="button" type="button" onclick="window.location.href='/prod1.html'" data-toggle="tooltip" title="Click me!">Camisetas !</button>
@@ -37,4 +31,12 @@
   </div>
   <iframe width="740" height="416" src="https://www.youtube.com/embed/EYEHUOpwNvE?autoplay=1&loop=1" allow=" autoplay;" allowfullscreen></iframe></br>
 </body>
+<!-- <form>
+  <div class="dropdown-container">
+    <input type="search" id="miBusqueda" name="q" placeholder="Search...">
+      <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"><button>Search</button>
+      <div id="myDropdown" class="dropdown-content"></div>
+    <p id="resultado"></p>
+  </div>
+</form> -->
 </html>
