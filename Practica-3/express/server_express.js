@@ -20,24 +20,24 @@ app.post('/search', (req, res) => {
     data = req.body.search;
     console.log(data);
     // JSON.stringify(mijson);
-    let prod = completeProd;
+    let prod = completeProd(data, mijson);
+    res.send('Esto es: ' + prod);
 
 });
 
 function completeProd(data, mijson){
-    console.log('Complete_ ');
-    console.log(mijson);
-      console.log(data);
-  let list;
+  // console.log(mijson);
+  let prodTotal = [];
   for (d in mijson) {
     mijson[d].forEach(element => {
       if (element.name == data) {
-        list = element;
+        console.log(element);
+        prodTotal.push(element);
       }
     });
   }
-  return list;
-  console.log(list);
+  return prodTotal;
+  console.log(prodTotal);
 }
 
 app.listen(9090);
