@@ -21,8 +21,8 @@ app.post('/search', (req, res) => {
     console.log(data);
     // JSON.stringify(mijson);
     let prod = completeProd(data, mijson);
-    res.send('Esto es: ' + prod);
-
+    let pru = prueba();
+    res.send(pru);
 });
 
 function completeProd(data, mijson){
@@ -36,8 +36,17 @@ function completeProd(data, mijson){
       }
     });
   }
-  return prodTotal;
   console.log(prodTotal);
+  return prodTotal;
+}
+
+function prueba() {
+  let template = document.getElementById('templateHTML').innerHTML;
+  return template;
+  console.log(template);
+
+  // // Compile the template
+  // let theTemplate = Handlebars.compile(template);
 }
 
 app.listen(9090);

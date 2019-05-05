@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <link rel="stylesheet" href="static/tienda.css">
+    <link rel="icon" type="image/png" href="static/icon1.png">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <script src="static/client-2.js"></script>
+    <script src="server_express.js"></script>
+    <title>Su busqueda</title>
+  </head>
+  <body>
+    <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
+
+    <script id="templateHMTL" type="text/x-handlebars-template">
+      <p>You can find me in {{city}}. My address is {{number}} {{street}}.</p>
+    // <p>{{name}} {{img}} {{srock}} {{price}}</p>
+    </script>
+
+    <div class="content"></div>
+
+  </body>
+</html>
