@@ -35,35 +35,51 @@ function reg_cookie() {
     let username = document.getElementById('nombre').value
     document.cookie= "username = " + username;
 }
+//Crear cookie formulario pago
+function form_cookie() {
+  let nombre = document.getElementById('nombre').value
+  let apellido = document.getElementById('apellido').value
+  let correo = document.getElementById('correo').value
+  // let pago = document.getElementById('nombre').value
+  document.cookie= "nombre = " + nombre;
+  document.cookie= "apellido = " + apellido;
+  document.cookie= "correo = " + correo;
+  // document.cookie= "pago = " + pago;
+}
 
 //Crear cookie carrito
 function shop_cookie(part) {
+  let username = user();
   //devuelve json
   let list = PeticionAJAX();
   // console.log(list)
   let prod = [];
-  //Consigo mi prod entero
-  for (l in list) {
-    list[l].forEach(element => {
-      if (part == element.image) {
-        prod.push(element);
+  if (username != undefined) {
+      //Consigo mi prod entero
+      for (l in list) {
+        list[l].forEach(element => {
+          if (part == element.image) {
+            prod.push(element);
+          }
+        });
       }
-    });
-  }
-  //Separo variables de mi prod
-  prod.forEach(element => {
-    name = element.name;
-    img = element.image;
-    stock = element.stock;
-    price = element.price;
-  });
-  // console.log(prod);
-  document.cookie= "nameS = " + name;
-  document.cookie= "imagenS = " + img;
-  document.cookie= "stockS = " + stock;
-  document.cookie= "precioS = " + price;
+      //Separo variables de mi prod
+      prod.forEach(element => {
+        name = element.name;
+        img = element.image;
+        stock = element.stock;
+        price = element.price;
+      });
+      // console.log(prod);
+      document.cookie= "nameS = " + name;
+      document.cookie= "imagenS = " + img;
+      document.cookie= "stockS = " + stock;
+      document.cookie= "precioS = " + price;
 
-  alert("¡Has añadido un articulo a tu carrito!");
+      alert("¡Has añadido un articulo a tu carrito!");
+  }else {
+    alert("No te conozco... Registrate!");
+  }
 }
 
 function carrito(){

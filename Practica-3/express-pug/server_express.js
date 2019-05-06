@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 app.get('/prod1.html', (req, res) => {res.sendFile(__dirname + '/prod1.html')});
 app.get('/prod2.html', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
 app.get('/ingreso.html', (req, res) => {res.sendFile(__dirname + '/ingreso.html')});
+app.get('/form1.html', (req, res) => {res.sendFile(__dirname + '/form1.html')});
 
 //Acceso carrito
 app.get('/carrito', (req, res) => {

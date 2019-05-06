@@ -7,19 +7,19 @@
     <link rel="icon" type="image/png" href="static/icon1.png">
   </head>
   <body>
-    <form action="/form.js" method="post">
+    <form action="/" method="post">
       <h1>Nombre:
-      <input type="text" name="Nombre" placeholder="Nombre"/> <br /></h1>
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombre"/> <br /></h1>
       <h1>Apellidos:
-      <input type="text" name="Apellido" placeholder="Apellido"/> <br /></h1>
+      <input type="text" id="apellido" name="Apellido" placeholder="Apellido"/> <br /></h1>
        <h1>Correo Electrónico:
-       <input type="text" name="Email" placeholder="Email"/> <br /></h1>
+       <input type="text" id="correo" name="Email" placeholder="Email"/> <br /></h1>
         <h1>Metodo de pago:
           <input type="radio" name="pcb" value="p" required> paypal
           <input type="radio" name="pcb" value="c" required> tarjeta de crédito
           <input type="radio" name="pcb" value="b" required> transferencia bancaria
         </h1>
-      <input type="submit" value="Enviar"/>
+      <input type="submit" value="Enviar" onclick = "form_cookie()"/>
     </form>
   </body>
 </html>
