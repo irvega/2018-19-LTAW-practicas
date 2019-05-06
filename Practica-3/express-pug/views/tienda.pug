@@ -11,11 +11,12 @@
 
 <body onload="buscar()">
   <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
-  <p id="name">Bienvenido user....</p>
+  <p id="name">Bienvenido #{user}....</p>
+  <!-- <button class ="button" type="button" onclick="document.cookie='a=b'">Prueba</button> -->
+
   <div>
     <button class ="button" type="button" onclick="window.location.href='/ingreso.html'">Ingresar</button>
-    <button type="button" onclick="window.location.href='/form1.html'" ><img class= "carrito" id="cesta" src="static/carrito.png" alt="Carro"
-          width="50px" height="44px"></button>
+    <button type="button" onclick="carrito()" ><img class= "carrito" id="cesta" src="static/carrito.png" alt="Carro" width="50px" height="44px"></button>
   </div>
   <!-- Buscador -->
   <form action="/search" method="POST">
@@ -31,12 +32,4 @@
   </div>
   <!-- <iframe width="740" height="416" src="https://www.youtube.com/embed/EYEHUOpwNvE?autoplay=1&loop=1" allow=" autoplay;" allowfullscreen></iframe></br> -->
 </body>
-<!-- <form>
-  <div class="dropdown-container">
-    <input type="search" id="miBusqueda" name="q" placeholder="Search...">
-      <input type="text" placeholder="Search..." id="myInput" onkeyup="filterFunction()"><button>Search</button>
-      <div id="myDropdown" class="dropdown-content"></div>
-    <p id="resultado"></p>
-  </div>
-</form> -->
 </html>

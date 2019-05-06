@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-// const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 const app = express();
 const mijson = require('./static/datos.json');
 
@@ -9,15 +9,34 @@ app.set('view engine', 'pug');
 app.use('/static', express.static('static'));
 app.use(express.urlencoded());
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 
-app.get('/', (req, res) => {res.sendFile(__dirname + '/tienda.html')});
+app.get('/', (req, res) => {
+  let username;
+  if (req.cookies.username == undefined) {
+    username = 'usuario desconocido';
+  }else {
+    username = req.cookies.username;
+  }
+  res.render('tienda', { user: username});
+});
 app.get('/prod1.html', (req, res) => {res.sendFile(__dirname + '/prod1.html')});
-app.get('/prod2', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
-app.get('/form1', (req, res) => {res.sendFile(__dirname + '/form1.html')});
-app.get('/ingreso', (req, res) => {res.sendFile(__dirname + '/ingreso.html')});
+app.get('/prod2.html', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
+app.get('/ingreso.html', (req, res) => {res.sendFile(__dirname + '/ingreso.html')});
 
-//Recibe mensaje y lo lee
+//Acceso carrito
+app.get('/carrito', (req, res) => {
+  console.log('Cookies: ', req.cookies)
+  if (req.cookies.username == undefined) {
+    console.log('faiiil')
+    res.render('tienda', { user: req.cookies.username});
+    // clearCookie("Warriors");
+  }else {
+    res.render('carrito', {img: req.cookies.imagen, name: req.cookies.name, stock: req.cookies.stock, price: req.cookies.precio});
+  }
+});
+
+//Recibe busqueda prod
 app.post('/search', (req, res) => {
     // data = JSON.stringify(req.body);
     //Nombre del articulo
@@ -36,6 +55,19 @@ app.post('/search', (req, res) => {
     res.render('prodCompleto', { name: name, img: img, stock: stock, price: price, title: 'Hey'});
 });
 
+//Volver home desde ingreso, leer cookie
+app.post('/', (req, res) => {
+    let username;
+    if (req.cookies.username == undefined) {
+      username = 'usuario desconocido';
+    }else {
+      username = req.cookies.username;
+    }
+    console.log('Cookies: ', req.cookies)
+    res.render('tienda', { user: username});
+});
+
+//Lee json y guarda producto entero no solo nombre
 function completeProd(data, mijson){
   // console.log(mijson);
   let prodTotal = [];
