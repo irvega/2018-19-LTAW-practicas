@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
   let username;
   if (req.cookies.username == undefined) {
     username = 'usuario desconocido';
+    // res.clearCookie('imagen');
   }else {
     username = req.cookies.username;
   }
@@ -27,12 +28,11 @@ app.get('/ingreso.html', (req, res) => {res.sendFile(__dirname + '/ingreso.html'
 //Acceso carrito
 app.get('/carrito', (req, res) => {
   console.log('Cookies: ', req.cookies)
-  if (req.cookies.username == undefined) {
-    console.log('faiiil')
+  if (req.cookies.username == undefined || req.cookies.nameS == undefined) {
+    console.log('No tienes articulos añadidos!')
     res.render('tienda', { user: req.cookies.username});
-    // clearCookie("Warriors");
   }else {
-    res.render('carrito', {img: req.cookies.imagen, name: req.cookies.name, stock: req.cookies.stock, price: req.cookies.precio});
+    res.render('carrito', {img: req.cookies.imagenS, name: req.cookies.nameS, stock: req.cookies.stockS, price: req.cookies.precioS});
   }
 });
 

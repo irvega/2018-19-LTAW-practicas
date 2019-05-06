@@ -58,15 +58,45 @@ function shop_cookie(part) {
     price = element.price;
   });
   // console.log(prod);
-  document.cookie= "name = " + name;
-  document.cookie= "imagen = " + img;
-  document.cookie= "stock = " + stock;
-  document.cookie= "precio = " + price;
+  document.cookie= "nameS = " + name;
+  document.cookie= "imagenS = " + img;
+  document.cookie= "stockS = " + stock;
+  document.cookie= "precioS = " + price;
 
   alert("¡Has añadido un articulo a tu carrito!");
 }
 
 function carrito(){
-  console.log('HOLIII')
-  window.location.href= "/carrito";
+  let username = user();
+  if (username == undefined) {
+     alert("No te conozco... Registrate!");
+     // document.cookie = "nameS=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+  }else {
+      setTimeout(function(){
+        if (username == 'irene') {
+        // if (window.location.href == "/tienda") {
+            console.log('AAAAAAAAAAAAAAAAAAAA')
+            alert("No tienes artículos en tu carrito... Añadelos!")
+        }
+      }, 2000);
+      window.location.href= "/carrito";
+  }
+}
+
+
+//Devuelve nombre user conectado
+function user(){
+  // console.log(document.cookie);
+  let u = document.cookie.split(";", 1);
+  // alert(typeof u);
+  let n = u.toString().split("=", 2);
+  let username;
+  console.log(n)
+  if (n != '') {
+    username = n[1].toString();
+  }else {
+    username = undefined;
+  }
+  console.log(username)
+  return username;
 }
