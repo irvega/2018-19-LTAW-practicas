@@ -4,7 +4,6 @@ function main() {
   //-- Crear el websocket
   var socket = io();
   //-- Obtener los elementos de interfaz:
-
   //-- Boton de envio de mensaje
   var send = document.getElementById('send')
   //-- Parrafo para mostrar mensajes recibidos

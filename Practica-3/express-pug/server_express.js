@@ -21,20 +21,26 @@ app.get('/', (req, res) => {
   }
   res.render('tienda', { user: username});
 });
-app.get('/prod1.html', (req, res) => {res.sendFile(__dirname + '/prod1.html')});
-app.get('/prod2.html', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
+// app.get('/prod1.html', (req, res) => {res.sendFile(__dirname + '/prod1.html')});
+// app.get('/prod2.html', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
 app.get('/ingreso.html', (req, res) => {res.sendFile(__dirname + '/ingreso.html')});
 app.get('/form1.html', (req, res) => {res.sendFile(__dirname + '/form1.html')});
 
 //Acceso carrito
 app.get('/carrito', (req, res) => {
   console.log('Cookies: ', req.cookies)
-  if (req.cookies.username == undefined || req.cookies.nameS == undefined) {
-    console.log('No tienes articulos añadidos!')
-    res.render('tienda', { user: req.cookies.username});
-  }else {
-    res.render('carrito', {img: req.cookies.imagenS, name: req.cookies.nameS, stock: req.cookies.stockS, price: req.cookies.precioS});
-  }
+  let cook = req.cookies;
+  let data;
+  let prod = [];
+  //Busca en la cookies nameS para ver si al add
+  for (c in cook) {
+    if (c.includes(c.match(/^nameS/))) {
+      data = cook[c];
+      prod.push(completeProd(data, mijson)[0]);
+    } 
+  };
+  res.render('carrito', {prod: prod});
+
 });
 
 //Recibe busqueda prod
@@ -45,6 +51,7 @@ app.post('/search', (req, res) => {
     console.log(data);
     // JSON.stringify(mijson);
     let prod = completeProd(data, mijson);
+    console.log(prod)
     let name, img, stock,  price;
     prod.forEach(element => {
       name = element.name;
@@ -53,7 +60,21 @@ app.post('/search', (req, res) => {
       price = element.price;
     });
     // res.send(prod);
-    res.render('prodCompleto', { name: name, img: img, stock: stock, price: price, title: 'Hey'});
+    res.render('prodCompleto', {prod: prod, name: name, img: img, stock: stock, price: price, title: 'Hey'});
+    // res.render('prodCompleto', {prod: prod, title: 'Hey'});
+});
+
+//Clicar en camisetas
+app.get('/camisetas', (req, res) => {
+  let prodTotal = mijson['Camisetas']
+  // console.log(prodTotal)
+  res.render('prodAdd', {prod: prodTotal});
+});
+
+//Clicar en calcetines
+app.get('/calcetines', (req, res) => {
+  let prodTotal = mijson['Calcetines']
+  res.render('prodAdd', {prod: prodTotal});
 });
 
 //Volver home desde ingreso, leer cookie

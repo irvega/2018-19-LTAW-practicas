@@ -11,6 +11,7 @@ function PeticionAJAX() {
 function lista(){
   let prod = PeticionAJAX();
   let list = [];
+  //Bucle objeto {}
   for (p in prod) {
     prod[p].forEach(element => {
       list.push(element.name);
@@ -35,6 +36,7 @@ function reg_cookie() {
     let username = document.getElementById('nombre').value
     document.cookie= "username = " + username;
 }
+
 //Crear cookie formulario pago
 function form_cookie() {
   let nombre = document.getElementById('nombre').value
@@ -47,72 +49,61 @@ function form_cookie() {
   // document.cookie= "pago = " + pago;
 }
 
-//Crear cookie carrito
+//Add: Crear cookie carrito
 function shop_cookie(part) {
-  let username = user();
-  //devuelve json
-  let list = PeticionAJAX();
-  // console.log(list)
-  let prod = [];
-  if (username != undefined) {
-      //Consigo mi prod entero
-      for (l in list) {
-        list[l].forEach(element => {
-          if (part == element.image) {
-            prod.push(element);
-          }
-        });
-      }
-      //Separo variables de mi prod
-      prod.forEach(element => {
-        name = element.name;
-        img = element.image;
-        stock = element.stock;
-        price = element.price;
-      });
-      // console.log(prod);
-      document.cookie= "nameS = " + name;
-      document.cookie= "imagenS = " + img;
-      document.cookie= "stockS = " + stock;
-      document.cookie= "precioS = " + price;
+  let d = document.cookie;
+  let username = d.includes(d.match(/username/));
+  if (username == true) {
+      document.cookie= "nameS" + part + "= " + part;
+      // document.cookie= "imagenS = " + img;
+      // document.cookie= "stockS = " + stock;
+      // document.cookie= "precioS = " + price;
 
       alert("¡Has añadido un articulo a tu carrito!");
+      window.location.href= "/";
   }else {
     alert("No te conozco... Registrate!");
+    window.location.href= "/ingreso.html";
   }
 }
 
+//Clicar carrito
 function carrito(){
-  let username = user();
-  if (username == undefined) {
+  let d = document.cookie;
+  let add = d.includes(d.match(/nameS/));
+  let username = d.includes(d.match(/username/));
+  console.log(add)
+  console.log(username)
+
+  if (username == false) {
      alert("No te conozco... Registrate!");
-     // document.cookie = "nameS=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    //  document.cookie = "nameS=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    //  document.cookie = "imagenS=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    //  document.cookie = "stockS=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    //  document.cookie = "precioS=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
   }else {
-      setTimeout(function(){
-        if (username == 'irene') {
-        // if (window.location.href == "/tienda") {
-            console.log('AAAAAAAAAAAAAAAAAAAA')
-            alert("No tienes artículos en tu carrito... Añadelos!")
-        }
-      }, 2000);
-      window.location.href= "/carrito";
+      if (add == false) {
+        alert("No tienes artículos guardados... Añadelos!");
+      }else{
+        window.location.href= "/carrito";
+      }
   }
 }
 
 
 //Devuelve nombre user conectado
-function user(){
-  // console.log(document.cookie);
-  let u = document.cookie.split(";", 1);
-  // alert(typeof u);
-  let n = u.toString().split("=", 2);
-  let username;
-  console.log(n)
-  if (n != '') {
-    username = n[1].toString();
-  }else {
-    username = undefined;
-  }
-  console.log(username)
-  return username;
-}
+// function user(){
+//   console.log(document.cookie);
+//   let u = document.cookie.split(";", 1);
+//   // alert(typeof u);
+//   let n = u.toString().split("=", 2);
+//   let username;
+//   console.log(n)
+//   if (n != '') {
+//     username = n[1].toString();
+//   }else {
+//     username = undefined;
+//   }
+//   console.log(username)
+//   return username;
+// }

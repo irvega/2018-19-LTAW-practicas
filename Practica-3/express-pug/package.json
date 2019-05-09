@@ -7,7 +7,7 @@
   ],
   "version": "0.0.1",
   "author": "Irene",
-  "main": "server.js",
+  "main": "server_express.js",
   "devDependencies": {},
   "license": "GPL-3.0",
   "repository": {
