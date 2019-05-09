@@ -11,21 +11,20 @@
 
 <body onload="buscar()">
   <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
-  <p id="name">Bienvenido #{user}....</p>
+  <p id="user">Bienvenido #{user}....</p>
   <!-- <button class ="button" type="button" onclick="document.cookie='a=b'">Prueba</button> -->
-
+  <p id="name"> Selecione producto:  </p>
   <div>
     <button class ="button" type="button" onclick="window.location.href='/ingreso.html'">Ingresar</button>
     <button type="button" onclick="carrito()" ><img class= "carrito" id="cesta" src="static/carrito.png" alt="Carro" width="50px" height="44px"></button>
   </div>
   <!-- Buscador -->
   <form action="/search" method="POST">
-    <input type="text" list="busc" type="text" name='search'>
+    <input type="text" list="busc" type="text" name='search' id="key" placeholder="¿Que quieres?">
     <input type="submit" name="submit" value="buscar">
     <datalist id="busc"></datalist>
   </form>
 
-  <p id="name"> Selecione producto:  </p>
   <div style="text-align:center">
     <button class ="button" type="button" onclick="window.location.href='/camisetas'" data-toggle="tooltip" title="Click me!">Camisetas !</button>
     <button class ="button" type="button" onclick="window.location.href='/calcetines'" data-toggle="tooltip" title="Click me!">Calcetines !</button>

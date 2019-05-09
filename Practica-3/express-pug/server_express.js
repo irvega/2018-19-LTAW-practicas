@@ -32,12 +32,12 @@ app.get('/carrito', (req, res) => {
   let cook = req.cookies;
   let data;
   let prod = [];
-  //Busca en la cookies nameS para ver si al add
+  //Busca en la cookies nameS para ver añadir add
   for (c in cook) {
     if (c.includes(c.match(/^nameS/))) {
       data = cook[c];
       prod.push(completeProd(data, mijson)[0]);
-    } 
+    }
   };
   res.render('carrito', {prod: prod});
 
@@ -52,16 +52,16 @@ app.post('/search', (req, res) => {
     // JSON.stringify(mijson);
     let prod = completeProd(data, mijson);
     console.log(prod)
-    let name, img, stock,  price;
-    prod.forEach(element => {
-      name = element.name;
-      img = element.image;
-      stock = element.stock;
-      price = element.price;
-    });
+    // let name, img, stock,  price;
+    // prod.forEach(element => {
+    //   name = element.name;
+    //   img = element.image;
+    //   stock = element.stock;
+    //   price = element.price;
+    // });
     // res.send(prod);
-    res.render('prodCompleto', {prod: prod, name: name, img: img, stock: stock, price: price, title: 'Hey'});
-    // res.render('prodCompleto', {prod: prod, title: 'Hey'});
+    // res.render('prodCompleto', {prod: prod, name: name, img: img, stock: stock, price: price, title: 'Hey'});
+    res.render('prodAdd', {prod: prod, title: 'Hey'});
 });
 
 //Clicar en camisetas

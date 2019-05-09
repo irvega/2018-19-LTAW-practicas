@@ -15,7 +15,7 @@
     "url": "https://github.com/myTeachingURJC/2018-19-LTAW.git"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node server_express.js",
     "test": "node -v"
   },
   "dependencies": {
