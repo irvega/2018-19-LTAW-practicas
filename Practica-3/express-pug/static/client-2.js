@@ -24,15 +24,18 @@ let c = 0;
 // Abro desplegable buscador con contenido
 function buscar(){
   let list = lista();
-  document.getElementById("key").addEventListener("keyup", cuenta);
-  if (c==3) {
+  let f = document.getElementById("key").addEventListener("keyup", cuenta);
+  console.log(f)
+  let v = f.value;
+  console.log(v)
+   if (v==3) {
     console.log('TRES')
     list.forEach(element => {
       let option = document.createElement("option");
       option.value = element;
       document.getElementById("busc").appendChild(option);
     });
-  }
+   }
 }
 function cuenta() {
   c = c + 1;
