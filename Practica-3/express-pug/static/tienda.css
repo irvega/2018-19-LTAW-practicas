@@ -4,9 +4,17 @@
 }
 
 body {
-  background-color:  #936f80 ;
+  background-color:  #ffff9e ;
   width:100%;
+  border: 20%;
 }
+#main{background: url(fondo1.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      width:100%;
+      border: 20%}
 
 #name{color: #d4d126;
      font-family: Letter;
@@ -16,7 +24,7 @@ body {
 }
 #user{color: #d4d126;
      font-family: Letter;
-     text-align: center;
+     text-align: right;
      font-size: 200%;
      padding-bottom: 1px
 }
@@ -29,12 +37,43 @@ body {
       font-size: 260%
 }
 
+#compra{color: #8B08B;
+      text-align: center;
+      font-family: FreeMono;
+      font-weight: bolder;
+      font-size: 140%
+}
+
+#buy{margin-left: 20%;
+    font-family: FreeMono;
+    font-size: 70%;
+}
+#prodAdd{margin-left: 20%;
+    font-family: FreeMono;
+    font-size: 120%;
+}
+
+#boton{justify-content:center}
+
+#buscador{margin-left: 5%}
+#acep{margin-left: 60%}
+
+.content{display:flex;
+         justify-content: space-around}
+
 .button{border-radius: 7px;
-        padding: 10px;
         font-size: 17px;
         border: 1px solid grey;
-        background: #f1f1f1
+        background: #f1f1f1;
+        cursor: pointer;
 }
+.button:hover {
+color: black;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 1);
+transition: all 0.2s ease;
+}
+
+.ingreso{margin-left: 50%}
 
 iframe{margin-top: 17px;
        margin-left: 20%

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>TIENDALANDIA compra</title>
+    <link rel="stylesheet" href="static/form1.css">
+    <link rel="icon" type="image/png" href="static/icon1.png">
+    <script src="static/client-2.js"></script>
+  </head>
+  <body>
+    <form action="/compra" method="post">
+      <h1>Nombre:
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombre"/> <br /></h1>
+      <h1>Apellidos:
+      <input type="text" id="apellido" name="Apellido" placeholder="Apellido"/> <br /></h1>
+       <h1>Correo Electrónico:
+       <input type="text" id="correo" name="Email" placeholder="Email" required/> <br /></h1>
+        <h1>Metodo de pago:
+          <input id="paypal" type="radio" name="pcb" value="p" required> paypal
+          <input id="tarjeta" type="radio" name="pcb" value="c" required> tarjeta de crédito
+          <input id="trans" type="radio" name="pcb" value="b" required> transferencia bancaria
+        </h1>
+      <input class="button" type="submit" value="Enviar" onclick="form_cookie()"/>
+    </form>
+  </body>
+</html>

@@ -15,30 +15,18 @@ app.get('/', (req, res) => {
   let username;
   if (req.cookies.username == undefined) {
     username = 'usuario desconocido';
-    // res.clearCookie('imagen');
   }else {
     username = req.cookies.username;
   }
   res.render('tienda', { user: username});
 });
-// app.get('/prod1.html', (req, res) => {res.sendFile(__dirname + '/prod1.html')});
-// app.get('/prod2.html', (req, res) => {res.sendFile(__dirname + '/prod2.html')});
-app.get('/ingreso.html', (req, res) => {res.sendFile(__dirname + '/ingreso.html')});
-app.get('/form1.html', (req, res) => {res.sendFile(__dirname + '/form1.html')});
+
+app.get('/ingreso', (req, res) => {res.sendFile(__dirname + '/views/ingreso.html')});
+app.get('/formulario', (req, res) => {res.sendFile(__dirname + '/views/form1.html')});
 
 //Acceso carrito
 app.get('/carrito', (req, res) => {
-  console.log('Cookies: ', req.cookies)
-  let cook = req.cookies;
-  let data;
-  let prod = [];
-  //Busca en la cookies nameS para ver añadir add
-  for (c in cook) {
-    if (c.includes(c.match(/^nameS/))) {
-      data = cook[c];
-      prod.push(completeProd(data, mijson)[0]);
-    }
-  };
+  let [prod, price] = cookieShop(req);
   res.render('carrito', {prod: prod});
 
 });
@@ -64,7 +52,7 @@ app.post('/search', (req, res) => {
     res.render('prodAdd', {prod: prod, title: 'Hey'});
 });
 
-//Clicar en camisetas
+//Clicar en  boton camisetas
 app.get('/camisetas', (req, res) => {
   let prodTotal = mijson['Camisetas']
   // console.log(prodTotal)
@@ -89,6 +77,12 @@ app.post('/', (req, res) => {
     res.render('tienda', { user: username});
 });
 
+//Pantalla despues de compra
+app.post('/compra', (req, res) => {
+  let [prod, price] = cookieShop(req);
+  res.render('compra', {prod: prod, price: price, pago: req.cookies.pago, nombre: req.cookies.nombre, apellido: req.cookies.apellido, correo: req.cookies.correo});
+});
+
 //Lee json y guarda producto entero no solo nombre
 function completeProd(data, mijson){
   // console.log(mijson);
@@ -103,6 +97,27 @@ function completeProd(data, mijson){
   }
   console.log(prodTotal);
   return prodTotal;
+}
+
+
+//Leer cookies los productos selecionados en carrito
+function cookieShop(req) {
+  console.log('Cookies: ', req.cookies)
+  let cook = req.cookies;
+  let data, prodInd, priceInd;
+  let price = 0.0;
+  let prod = [];
+  //Busca en la cookies nameS para ver añadir add
+  for (c in cook) {
+    if (c.includes(c.match(/^nameS/))) {
+      data = cook[c];
+      prodInd = completeProd(data, mijson)[0];
+      prod.push(prodInd);
+      priceInd = parseFloat(prodInd.price);
+      price = price + priceInd;
+    }
+  };
+  return [prod, price];
 }
 
 app.listen(9090);

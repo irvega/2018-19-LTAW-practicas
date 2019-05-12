@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/tienda.css">
+    <link rel="icon" type="image/png" href="static/icon1.png">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  </head>
+  <body>
+      <p id="title"><i class='fas fa-backward'></i> TIENDALANDIA <i class='fas fa-forward'></i><p>
+      <p id="compra">¡ Tu compra ha sido realizada ! </p>
+      <div id="buy">
+            <h1>Nombre: #{nombre}  #{apellido} </h1>
+            <h1>Correo: #{correo} </h1>
+            <h1>Total: #{price}  € */Pagado con #{pago}/*</h1>
+            <div>
+              div
+                each val in prod
+                   img.box1#image(src=val.image width="90px" height="60px")
+                   span= '   ' + val.name + ' - Precio: ' + val.price + '€'
+                   br
+            </div>
+      </div>
+      <button id="acep" class="button" type="button" name="button" onclick="window.location.href='/'">Aceptar</button>
+  </body>
+</html>

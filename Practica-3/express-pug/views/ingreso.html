@@ -4,17 +4,19 @@
     <meta charset="utf-8">
     <title>Registro</title>
     <link rel="stylesheet" href="static/form1.css">
+    <link rel="icon" type="image/png" href="static/icon1.png">
     <script src="static/client-2.js"></script>
   </head>
   <body>
+    <div class="ingreso">
     <form action="/" method="post">
       <h1>Nombre:
-      <input type="text" id="nombre" name="Nombre" placeholder="Nombre"/> <br/></h1>
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombre" required/> <br/></h1>
       <h1>Apellidos:
       <input type="text" id="apellido" name="Apellido" placeholder="Apellido"/> <br/></h1>
        <h1>Contraseña:
-       <input type="text" id="contraseña" name="Contraseña" placeholder="Contraseña"/> <br /></h1>
-      <input type="submit" value="Enviar" onclick = "reg_cookie()"/>
-    </form>
+       <input type="text" id="contraseña" name="Contraseña" placeholder="Contraseña" required/> <br /></h1>
+      <input class="button" type="submit" value="Enviar" onclick = "reg_cookie()"/>
+    </div>
   </body>
 </html>

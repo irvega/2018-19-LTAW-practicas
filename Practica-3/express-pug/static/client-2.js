@@ -20,15 +20,20 @@ function lista(){
   // console.log(list)
   return list;
 }
-let c = 0;
+
 // Abro desplegable buscador con contenido
 function buscar(){
+  document.getElementById("key").addEventListener("keyup", cuenta);
+}
+//Miro que haya 3 letras en buscador
+function cuenta() {
   let list = lista();
-  let f = document.getElementById("key").addEventListener("keyup", cuenta);
-  console.log(f)
-  let v = f.value;
-  console.log(v)
-   if (v==3) {
+  console.log('PRESS')
+  let palabra = document.getElementById("key").value;
+  let letras = palabra.length;
+  // letras = palabra.substr(0,2);
+  console.log('num: ' + letras)
+   if (letras == 3) {
     console.log('TRES')
     list.forEach(element => {
       let option = document.createElement("option");
@@ -37,17 +42,13 @@ function buscar(){
     });
    }
 }
-function cuenta() {
-  c = c + 1;
-  console.log('PRESS')
-  console.log(c)
-  return c
-}
 
 //Crear cookie registro
 function reg_cookie() {
     let username = document.getElementById('nombre').value
+    let contraseña = document.getElementById('contraseña').value
     document.cookie= "username = " + username;
+    document.cookie= "contraseña = " + contraseña;
 }
 
 //Crear cookie formulario pago
@@ -55,11 +56,21 @@ function form_cookie() {
   let nombre = document.getElementById('nombre').value
   let apellido = document.getElementById('apellido').value
   let correo = document.getElementById('correo').value
-  // let pago = document.getElementById('nombre').value
+  let pago1 = document.getElementById('paypal')
+  let pago2 = document.getElementById('tarjeta')
+  let pago3 = document.getElementById('trans')
   document.cookie= "nombre = " + nombre;
   document.cookie= "apellido = " + apellido;
   document.cookie= "correo = " + correo;
-  // document.cookie= "pago = " + pago;
+
+  if (pago1.checked == true) {
+    document.cookie= "pago = paypal";
+  }else if (pago2.checked == true) {
+    document.cookie= "pago = tarjeta";
+  }else if (pago3.checked == true) {
+    document.cookie= "pago = transferencia";
+  }
+
 }
 
 //Add: Crear cookie carrito
@@ -82,6 +93,7 @@ function shop_cookie(part) {
 
 //Clicar carrito
 function carrito(){
+
   let d = document.cookie;
   let add = d.includes(d.match(/nameS/));
   let username = d.includes(d.match(/username/));
