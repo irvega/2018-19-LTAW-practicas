@@ -35,6 +35,11 @@ io.on('connection', function(socket){
   userid.push(socket.id);
   console.log(userid)
 
+  // Envio un user especifico
+  // msg = 'Eres especial! '
+  // let id= userid[0];
+  // io.to(id).emit('new_message', msg);
+
   //Envio a todos usuarios menos al que se conecta (lo envia)
   msg = 'Nuevo usuario conectado!';
   socket.broadcast.emit('new_message', msg);

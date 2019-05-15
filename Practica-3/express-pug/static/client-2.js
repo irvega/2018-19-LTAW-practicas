@@ -23,25 +23,35 @@ function lista(){
 
 // Abro desplegable buscador con contenido
 function buscar(){
-  document.getElementById("key").addEventListener("keyup", cuenta);
-}
-//Miro que haya 3 letras en buscador
-function cuenta() {
   let list = lista();
-  console.log('PRESS')
-  let palabra = document.getElementById("key").value;
-  let letras = palabra.length;
-  // letras = palabra.substr(0,2);
-  console.log('num: ' + letras)
-   if (letras == 3) {
-    console.log('TRES')
     list.forEach(element => {
       let option = document.createElement("option");
       option.value = element;
       document.getElementById("busc").appendChild(option);
     });
-   }
 }
+
+// // Abro desplegable buscador con contenido
+// function buscar(){
+//   document.getElementById("key").addEventListener("keyup", cuenta);
+// }
+// //Miro que haya 3 letras en buscador
+// function cuenta() {
+//   let list = lista();
+//   console.log('PRESS')
+//   let palabra = document.getElementById("key").value;
+//   let letras = palabra.length;
+//   // letras = palabra.substr(0,2);
+//   console.log('num: ' + letras)
+//    if (letras == 3) {
+//     console.log('TRES')
+//     list.forEach(element => {
+//       let option = document.createElement("option");
+//       option.value = element;
+//       document.getElementById("busc").appendChild(option);
+//     });
+//    }
+// }
 
 //Crear cookie registro
 function reg_cookie() {

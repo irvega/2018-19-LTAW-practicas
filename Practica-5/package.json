@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
+    "start server": "npm start --prefix & electron .",
     "start": "electron ."
   },
   "dependencies": {

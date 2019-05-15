@@ -1,3 +1,3 @@
 # Práctica 2
 
-python manage.py runserver
+python manage.py runserver puerto
