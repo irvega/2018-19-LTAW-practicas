@@ -1,0 +1,89 @@
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  100% {top: -30px;
+        text-shadow: 0 1px 0 #CCC,
+                     0 2px 0 #CCC,
+                     0 3px 0 #CCC,
+                     0 4px 0 #CCC,
+                     0 5px 0 #CCC,
+                     0 6px 0 #CCC,
+                     0 7px 0 #CCC,
+                     0 8px 0 #CCC,
+                     0 9px 0 #CCC,
+                     0 30px 30px rgba(0, 0, 0, .3);
+        }
+}
+
+body{	height: 100%;
+			margin: 0;
+			background: #7F7FD5;
+	    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+	    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5)
+}
+
+#title{align-content: center
+      cursor: default;
+      top: 30px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100px;
+      margin: auto;
+      display: block;
+
+      -webkit-animation: bounce .9s ease infinite alternate;
+
+      font-family: 'Erica One', cursive;
+      font-size: 80px;
+      color: #FFF;
+      text-align: center;
+      line-height: 100px;
+      text-shadow: 0 1px 0 #CCC,
+                   0 2px 0 #CCC,
+                   0 3px 0 #CCC,
+                   0 4px 0 #CCC,
+                   0 5px 0 #CCC,
+                   0 6px 0 transparent,
+                   0 7px 0 transparent,
+                   0 8px 0 transparent,
+                   0 9px 0 transparent,
+                   0 10px 10px rgba(0, 0, 0, .6);
+}
+
+input{border-radius: 5px;
+      margin-left: 43%
+}
+
+#msg{text-align: center}
+
+.button{border-radius: 7px;
+        font-size: 17px;
+        border: 1px solid grey;
+        background: #f1f1f1;
+        cursor: pointer;
+}
+.button:hover {color: black;
+               box-shadow: 0 4px 16px rgba(0, 0, 0, 1);
+               transition: all 0.2s ease;
+}
+
+#display{
+  background-color: rgba(0,0,0,0.3) !important;
+  border:0 !important;
+  color:white !important;
+  height: 90% !important;
+  overflow-y: auto;
+  font-family: FreeMono;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 25px;
+  background-color: #82ccdd;
+  padding: 10px;
+  position: relative;
+}
+#display:focus{
+     box-shadow:none !important;
+     outline:0px !important;
+}

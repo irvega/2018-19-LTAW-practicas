@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <title>CHAT</title>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./node_modules/socket.io-client/dist/socket.io.js"></script>
     <script src="chat-client.js"></script>
     <link rel="stylesheet" href="static/index.css">
     <link rel="icon" type="image/png" href="static/icon.png">
   </head>
   <body onload="main();">
     <p id="title">Chat</p><br></br>
-    <input id="user" autocomplete="off" placeholder="Nombre de usuario"/>
-    <span id="input"><input id="msg" autocomplete="off"/></span>
+    <input id="user" autocomplete="off" placeholder="Nombre de usuario" required/>
+    <input id="msg" autocomplete="off" placeholder="msg"/>
     <button class="button "type="button" id="send">SEND</button><br></br>
     <p id="display"></p>
   </body>

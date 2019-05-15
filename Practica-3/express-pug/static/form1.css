@@ -7,14 +7,31 @@ body {
   background-color:  #936f80 ;
 }
 
-#name{color: #d4d126;
+/* #name{color: #d4d126;
      font-family: Letter;
      text-align: center;
      font-size: 400%;
      padding-bottom: 1px
-}
+} */
 
 h1{color: #8B08B;
   font-family: Letter;
-  font-size: 160%
+  font-size: 240%
+}
+
+.content{margin-top: 5%;
+         margin-left: 35%}
+
+input{border-radius: 5px;}
+
+.button{border-radius: 7px;
+        font-size: 17px;
+        border: 1px solid grey;
+        background: #f1f1f1;
+        cursor: pointer;
+        margin-left: 9%
+}
+.button:hover {color: black;
+               box-shadow: 0 4px 16px rgba(0, 0, 0, 1);
+               transition: all 0.2s ease;
 }

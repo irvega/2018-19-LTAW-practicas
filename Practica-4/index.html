@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>MI CHAT</title>
+    <title>CHAT</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="chat-client.js"></script>
+    <link rel="stylesheet" href="static/index.css">
+    <link rel="icon" type="image/png" href="static/icon.png">
   </head>
   <body onload="main();">
-    <p>Chat....</p>
-    <input id="msg" autocomplete="off" />
-    <button type="button" id="send">SEND</button>
+    <p id="title">Chat</p><br></br>
+    <span id="input"><input id="msg" autocomplete="off"/></span>
+    <button class="button "type="button" id="send">SEND</button><br></br>
     <p id="display"></p>
   </body>
 </html>

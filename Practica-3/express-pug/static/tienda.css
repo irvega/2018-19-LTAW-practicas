@@ -26,7 +26,8 @@ body {
      font-family: Letter;
      text-align: right;
      font-size: 200%;
-     padding-bottom: 1px
+     padding-bottom: 1px;
+     margin-left: 70%
 }
 
 #title{color: #8B08B;
@@ -34,7 +35,8 @@ body {
       text-decoration: underline;
       font-family: Letter;
       font-weight: bolder;
-      font-size: 260%
+      font-size: 260%;
+      margin-left: 32%
 }
 
 #compra{color: #8B08B;
@@ -67,13 +69,16 @@ body {
         background: #f1f1f1;
         cursor: pointer;
 }
-.button:hover {
-color: black;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 1);
-transition: all 0.2s ease;
+.button:hover {color: black;
+               box-shadow: 0 4px 16px rgba(0, 0, 0, 1);
+               transition: all 0.2s ease;
 }
 
 .ingreso{margin-left: 50%}
+
+input{border-radius: 5px;
+      margin-left: 43%
+}
 
 iframe{margin-top: 17px;
        margin-left: 20%

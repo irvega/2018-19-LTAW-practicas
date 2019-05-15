@@ -47,8 +47,17 @@ function cuenta() {
 function reg_cookie() {
     let username = document.getElementById('nombre').value
     let contraseña = document.getElementById('contraseña').value
-    document.cookie= "username = " + username;
-    document.cookie= "contraseña = " + contraseña;
+    let d = document.cookie;
+    let u = d.includes(d.match(/username/));
+    // No puede cambiar de usuario una vez iniciado
+    if (u == true) {
+        if (username != d.username) {
+            alert("¡Cierra navegador para cambiar de usuario!");
+        }
+    }else {
+      document.cookie= "username = " + username;
+      document.cookie= "contraseña = " + contraseña;
+    }
 }
 
 //Crear cookie formulario pago

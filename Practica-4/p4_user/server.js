@@ -3,6 +3,7 @@ let app = require('express')();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 
+let userid = [];
 let user = 0;
 
 app.use('/static', express.static('static'));
@@ -31,6 +32,9 @@ io.on('connection', function(socket){
   msg = 'Hi man !';
   socket.emit('new_message', msg);
 
+  userid.push(socket.id);
+  console.log(userid)
+
   //Envio a todos usuarios menos al que se conecta (lo envia)
   msg = 'Nuevo usuario conectado!';
   socket.broadcast.emit('new_message', msg);
@@ -45,16 +49,17 @@ io.on('connection', function(socket){
 
   //Detectar si se ha recibido un mensaje del cliente
    socket.on('new_message', msg => {
-     if (msg == '/help') {
+     let m = msg.split(": ", 2)[1];
+     if (m == '/help') {
        msg = 'Comandos soportados:' + '<br><br>' + '/list: Devolverá el número de usuarios conectados<br> /hello: El servidor nos devolverá el saludo<br> /date: Nos devolverá la fecha<br>';
        socket.emit('new_message', msg);
-     } else if (msg == '/list') {
+     } else if (m == '/list') {
        msg = 'Número de usuarios conectados: ' + user.toString();
        socket.emit('new_message', msg);
-     } else if (msg == '/hello') {
+     } else if (m == '/hello') {
        msg = 'Hello, whats up! ';
        socket.emit('new_message', msg);
-     } else if (msg == '/date') {
+     } else if (m == '/date') {
        let f = new Date();
        // msg = 'La fecha actual es: ' + f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear();
        let meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
